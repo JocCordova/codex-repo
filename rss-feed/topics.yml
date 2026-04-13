@@ -1,0 +1,99 @@
+topics:
+  - name: "agentic_ai"
+    weight: 1.4
+    keywords:
+      - "agent"
+      - "agentic"
+      - "tool use"
+      - "workflow automation"
+      - "autonomous systems"
+      - "reasoning model"
+      - "MCP"
+      - "multi-step planning"
+      - "orchestration"
+    negative_keywords:
+      - "crypto"
+      - "celebrity"
+      - "beginner"
+
+  - name: "mlops_data_platforms"
+    weight: 1.3
+    keywords:
+      - "mlops"
+      - "data pipeline"
+      - "dbt"
+      - "model monitoring"
+      - "data quality"
+      - "feature store"
+      - "orchestration"
+      - "evaluation"
+      - "observability"
+    negative_keywords:
+      - "course"
+      - "bootcamp"
+
+  - name: "applied_data_science"
+    weight: 1.25
+    keywords:
+      - "causal inference"
+      - "forecasting"
+      - "classification"
+      - "recommendation"
+      - "ranking"
+      - "A/B test"
+      - "uplift modeling"
+      - "churn"
+      - "bayesian"
+      - "experimentation"
+    negative_keywords:
+      - "homework"
+      - "student project"
+
+  - name: "ai_product_and_ux"
+    weight: 1.2
+    keywords:
+      - "human-in-the-loop"
+      - "AI UX"
+      - "trust"
+      - "explainability"
+      - "personalization"
+      - "decision support"
+      - "adoption"
+      - "user behavior"
+    negative_keywords:
+      - "toy app"
+      - "prompt list"
+
+  - name: "manufacturing_and_workflow"
+    weight: 1.15
+    keywords:
+      - "workflow software"
+      - "manufacturing"
+      - "lab automation"
+      - "operations"
+      - "inventory"
+      - "production planning"
+      - "digital traceability"
+      - "scheduling"
+    negative_keywords:
+      - "consumer gadget"
+      - "gaming"
+
+selection_rules:
+  prefer_multi_topic_overlap: true
+  prefer_source_diversity: true
+  penalize_duplicate_publishers: true
+  boost_if_matches_multiple_topics: 0.35
+  boost_if_contains_method_terms: 0.25
+
+method_terms:
+  - "benchmark"
+  - "evaluation"
+  - "ablation"
+  - "pipeline"
+  - "framework"
+  - "dataset"
+  - "inference"
+  - "latency"
+  - "monitoring"
+  - "retrieval"
