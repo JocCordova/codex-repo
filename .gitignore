@@ -1,2 +1,7 @@
 __pycache__/
 *.pyc
+
+rss-feed/__pycache__/
+rss-feed/venv/
+rss-feed/outputs/
+rss-feed/.env

@@ -2,7 +2,8 @@ run:
   timezone: "Europe/Berlin"
   max_items_per_feed: 15
   top_clusters: 5
-  min_relevance_score: 2.5
+  min_relevance_score: 1.25
+  min_selected_items: 5
   output_dir: "outputs"
   state_dir: "state"
   save_raw_items: true
@@ -36,7 +37,7 @@ notion:
     digest_date: "Digest Date"
 
 whatsapp:
-  enabled: false
+  enabled: true
   provider: "twilio"   # twilio or meta
   to_env: "WHATSAPP_TO"
   from_env: "WHATSAPP_FROM"

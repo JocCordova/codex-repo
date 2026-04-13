@@ -21,7 +21,7 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
-# fill environment variables in your shell or via .env loading tool
+# fill environment variables in .env; main.py loads this file automatically
 ```
 
 ### Run locally
@@ -36,7 +36,8 @@ Outputs are written to `run.output_dir` (default `outputs/`) and state is kept i
 
 - Edit feed and routing behavior in `config.yml`
 - Edit relevance topics/rules in `topics.yml`
-- Secrets stay in environment variables only
+- Secrets stay in environment variables only; `.env` is loaded automatically at startup
+- `run.min_selected_items` ensures the digest keeps at least that many articles when enough new items were fetched
 
 ### Notion mapping
 

@@ -51,5 +51,16 @@ def cluster_items(items: list[dict[str, Any]], max_clusters: int, min_cluster_si
     return clusters
 
 
-def select_top_clusters(clusters: list[dict[str, Any]], top_n: int) -> list[dict[str, Any]]:
-    return clusters[:top_n]
+def select_top_clusters(clusters: list[dict[str, Any]], top_n: int, min_items: int = 0) -> list[dict[str, Any]]:
+    selected = clusters[:top_n]
+    if min_items <= 0:
+        return selected
+
+    item_count = sum(len(cluster.get("items", [])) for cluster in selected)
+    next_index = len(selected)
+    while item_count < min_items and next_index < len(clusters):
+        cluster = clusters[next_index]
+        selected.append(cluster)
+        item_count += len(cluster.get("items", []))
+        next_index += 1
+    return selected

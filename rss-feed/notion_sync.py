@@ -6,7 +6,8 @@ from datetime import datetime
 from typing import Any
 
 import requests
-from zoneinfo import ZoneInfo
+
+from timezones import resolve_timezone
 
 logger = logging.getLogger(__name__)
 
@@ -52,7 +53,11 @@ def sync_to_notion(clusters: list[dict[str, Any]], notion_cfg: dict[str, Any], t
         logger.warning("Notion sync enabled but credentials are missing")
         return
 
-    digest_date = datetime.now(ZoneInfo(timezone_name)).date().isoformat()
+    try:
+        digest_date = datetime.now(resolve_timezone(timezone_name)).date().isoformat()
+    except ValueError as exc:
+        logger.error("Notion sync skipped: %s", exc)
+        return
     headers = {
         "Authorization": f"Bearer {token}",
         "Notion-Version": NOTION_VERSION,
@@ -61,6 +66,9 @@ def sync_to_notion(clusters: list[dict[str, Any]], notion_cfg: dict[str, Any], t
 
     for cluster in clusters:
         for item in cluster.get("items", []):
+            if not item.get("is_new", True):
+                logger.info("Skipping already seen item for Notion sync: %s", item["title"])
+                continue
             payload = {
                 "parent": {"database_id": database_id},
                 "properties": _build_properties(item, cluster, notion_cfg, digest_date),
