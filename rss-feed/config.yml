@@ -1,0 +1,63 @@
+run:
+  timezone: "Europe/Berlin"
+  max_items_per_feed: 15
+  top_clusters: 5
+  min_relevance_score: 2.5
+  output_dir: "outputs"
+  state_dir: "state"
+  save_raw_items: true
+  save_cluster_json: true
+
+feeds:
+  - name: "Towards Data Science"
+    url: "https://towardsdatascience.com/feed"
+    weight: 1.0
+
+  - name: "KDnuggets"
+    url: "https://www.kdnuggets.com/feed"
+    weight: 0.95
+
+  - name: "Google AI Blog"
+    url: "https://blog.google/technology/ai/rss/"
+    weight: 1.1
+
+notion:
+  enabled: true
+  token_env: "NOTION_API_TOKEN"
+  database_id_env: "NOTION_DATABASE_ID"
+  properties:
+    title: "Name"
+    source: "Source"
+    url: "Link"
+    score: "Score"
+    topics: "Topics"
+    cluster_size: "Cluster Size"
+    published_at: "Published At"
+    digest_date: "Digest Date"
+
+whatsapp:
+  enabled: false
+  provider: "twilio"   # twilio or meta
+  to_env: "WHATSAPP_TO"
+  from_env: "WHATSAPP_FROM"
+  sid_env: "TWILIO_ACCOUNT_SID"
+  token_env: "TWILIO_AUTH_TOKEN"
+  max_items: 5
+  max_message_chars: 1500
+
+clustering:
+  method: "tfidf_kmeans"
+  max_clusters: 6
+  min_cluster_size: 1
+
+feedback:
+  enabled: true
+  storage_path: "state/feedback.jsonl"
+  weekly_update_enabled: false
+  weekly_update_day: "sunday"
+  weekly_update_hour: 18
+  ranking_scale: [1, 5]
+
+scheduler:
+  mode: "cron"
+  intended_run_hour_local: 8
