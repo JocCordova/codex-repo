@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+
+# Generated artifacts
+exports/stl/*.stl
+exports/step/*.step
+exports/previews/*
+!exports/previews/.gitkeep
+reports/validation/*.md

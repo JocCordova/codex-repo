@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="520" viewBox="0 0 1180 520" role="img" aria-label="cad-agent pipeline graphic">
+  <defs>
+    <style>
+      .title { font: 700 28px 'Inter', Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 500 15px 'Inter', Arial, sans-serif; fill: #374151; }
+      .box-title { font: 700 18px 'Inter', Arial, sans-serif; fill: #0f172a; }
+      .box-text { font: 400 14px 'Inter', Arial, sans-serif; fill: #1f2937; }
+      .small { font: 400 12px 'Inter', Arial, sans-serif; fill: #475569; }
+      .arrow { stroke: #334155; stroke-width: 2.5; marker-end: url(#arrowhead); fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1180" height="520" fill="#f8fafc"/>
+  <text x="40" y="48" class="title">cad-agent: Local-First Parametric CAD Pipeline</text>
+  <text x="40" y="74" class="subtitle">Input spec → planner → modeler (CadQuery) → exports → validator report</text>
+
+  <rect x="40" y="120" rx="12" ry="12" width="200" height="160" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="58" y="150" class="box-title">1) Input</text>
+  <text x="58" y="176" class="box-text">inputs/request.yaml</text>
+  <text x="58" y="198" class="box-text">strict schema contract</text>
+  <text x="58" y="220" class="box-text">dimensions + constraints</text>
+  <text x="58" y="242" class="small">default: FDM + PLA + P1S</text>
+
+  <rect x="280" y="120" rx="12" ry="12" width="220" height="160" fill="#e0f2fe" stroke="#0284c7"/>
+  <text x="298" y="150" class="box-title">2) Planner Agent</text>
+  <text x="298" y="176" class="box-text">load + validate request</text>
+  <text x="298" y="198" class="box-text">normalize modeling spec</text>
+  <text x="298" y="220" class="box-text">emit assumptions + notes</text>
+
+  <rect x="540" y="120" rx="12" ry="12" width="240" height="160" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="558" y="150" class="box-title">3) Modeler Agent</text>
+  <text x="558" y="176" class="box-text">CadQuery build_part(params)</text>
+  <text x="558" y="198" class="box-text">fully parameterized geometry</text>
+  <text x="558" y="220" class="box-text">editable Python model code</text>
+
+  <rect x="820" y="120" rx="12" ry="12" width="160" height="160" fill="#fef3c7" stroke="#d97706"/>
+  <text x="838" y="150" class="box-title">4) Exports</text>
+  <text x="838" y="176" class="box-text">exports/stl</text>
+  <text x="838" y="198" class="box-text">exports/step</text>
+  <text x="838" y="220" class="small">preview-ready files</text>
+
+  <rect x="1000" y="120" rx="12" ry="12" width="140" height="160" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="1018" y="150" class="box-title">5) Validator</text>
+  <text x="1018" y="176" class="box-text">fit + wall checks</text>
+  <text x="1018" y="198" class="box-text">overhang heuristics</text>
+  <text x="1018" y="220" class="box-text">markdown report</text>
+
+  <path class="arrow" d="M240 200 L280 200"/>
+  <path class="arrow" d="M500 200 L540 200"/>
+  <path class="arrow" d="M780 200 L820 200"/>
+  <path class="arrow" d="M980 200 L1000 200"/>
+
+  <rect x="40" y="330" rx="10" ry="10" width="1100" height="150" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="60" y="362" class="box-title">How to run</text>
+  <text x="60" y="388" class="box-text">python scripts/generate.py --input inputs/request_example.yaml</text>
+  <text x="60" y="412" class="box-text">python scripts/validate.py --input inputs/request_example.yaml</text>
+  <text x="60" y="436" class="box-text">python scripts/batch_run.py</text>
+  <text x="60" y="462" class="small">All workflow steps are local-only. No MCP. Max 3 core agents.</text>
+</svg>
