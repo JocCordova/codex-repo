@@ -1,0 +1,33 @@
+name: screw_mount_cable_clip
+units: mm
+process: FDM
+material: PLA
+printer: bambulab_p1s
+functional_requirements:
+  - Hold one cable against a flat surface.
+  - Mount via one M4 screw.
+  - Keep part compact and printable without supports.
+dimensions:
+  cable_diameter_mm: 6.5
+  clip_inner_width_mm: 8.0
+  clip_depth_mm: 12.0
+  base_length_mm: 24.0
+  base_width_mm: 14.0
+  base_thickness_mm: 3.0
+  screw_hole_diameter_mm: 4.3
+  screw_head_clearance_diameter_mm: 8.0
+  screw_head_clearance_depth_mm: 1.8
+  wall_thickness_mm: 1.6
+constraints:
+  - Must fit within printer build volume.
+  - Avoid overhangs exceeding FDM comfort defaults.
+assumptions:
+  - Single-wall cable retention is sufficient.
+  - User will tune screw fit if required for hardware variance.
+style:
+  part_type: cable_clip
+  fillet_radius_mm: 1.2
+output:
+  export_stl: true
+  export_step: true
+  report: true

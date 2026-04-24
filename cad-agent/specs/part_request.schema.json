@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/cad-agent/specs/part_request.schema.json",
+  "title": "PartRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "units",
+    "process",
+    "material",
+    "printer",
+    "functional_requirements",
+    "dimensions",
+    "constraints",
+    "assumptions",
+    "style",
+    "output"
+  ],
+  "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "units": {"type": "string", "enum": ["mm", "inch"]},
+    "process": {"type": "string", "enum": ["FDM"]},
+    "material": {"type": "string", "minLength": 1},
+    "printer": {"type": "string", "minLength": 1},
+    "functional_requirements": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      },
+      "minProperties": 1
+    },
+    "constraints": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "style": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "part_type": {"type": "string"},
+        "fillet_radius_mm": {"type": "number", "minimum": 0}
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["export_stl", "export_step", "report"],
+      "properties": {
+        "export_stl": {"type": "boolean"},
+        "export_step": {"type": "boolean"},
+        "report": {"type": "boolean"}
+      }
+    }
+  }
+}

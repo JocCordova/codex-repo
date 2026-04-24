@@ -1,0 +1,8 @@
+minimum_wall_mm: 1.2
+preferred_wall_mm: 1.6
+minimum_feature_mm: 0.8
+preferred_hole_adjustment_mm: 0.2
+max_overhang_deg: 50
+default_clearance_mm: 0.3
+preferred_base_thickness_mm: 2.4
+support_avoidance: true

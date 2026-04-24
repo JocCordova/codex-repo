@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cad-agent"
+version = "0.1.0"
+description = "Local-first MVP for agent-assisted parametric 3D-printable design"
+requires-python = ">=3.11"
+dependencies = [
+  "cadquery>=2.4",
+  "pydantic>=2.6",
+  "PyYAML>=6.0",
+  "trimesh>=4.4",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

@@ -1,0 +1,31 @@
+printers:
+  bambulab_p1s:
+    vendor: Bambu Lab
+    model: P1S
+    process: FDM
+    build_volume_mm:
+      x: 256
+      y: 256
+      z: 256
+    default_nozzle_mm: 0.4
+    default_layer_height_mm: 0.2
+    max_bed_temp_c: 100
+    max_nozzle_temp_c: 300
+    default_material: PLA
+    filament_profiles:
+      PLA:
+        nozzle_temp_c: 220
+        bed_temp_c: 60
+        chamber_temp_c: 35
+    printability_defaults:
+      minimum_wall_mm: 1.2
+      preferred_wall_mm: 1.6
+      minimum_feature_mm: 0.8
+      max_overhang_deg: 50
+      default_tolerance_mm: 0.25
+      default_clearance_mm: 0.3
+      bridge_span_comfort_mm: 20
+      bridge_span_limit_mm: 35
+      notes:
+        - Use 3 perimeters for structural parts.
+        - For snap-ish features in PLA, increase fillet radii and avoid sharp roots.
