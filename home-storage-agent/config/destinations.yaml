@@ -1,0 +1,24 @@
+archive_root: archive_5tb
+category_destinations:
+  media_video: archive_5tb/01_media/unsorted_video/
+  media_audio: archive_5tb/01_media/music/
+  photo: archive_5tb/02_photos_videos/personal_archive/
+  document: archive_5tb/03_documents/personal/
+  code: archive_5tb/04_code_projects/old_projects/
+  archive: archive_5tb/99_cold_storage/old_archives/
+  installer: archive_5tb/99_cold_storage/manual_review/
+  config: archive_5tb/06_backups/config_exports/
+  sensitive: archive_5tb/03_documents/manual_review/
+  unknown: archive_5tb/99_cold_storage/unknown/
+  movies: archive_5tb/01_media/movies/
+  series: archive_5tb/01_media/series/
+  documentaries: archive_5tb/01_media/documentaries/
+  youtube: archive_5tb/01_media/youtube/
+  music: archive_5tb/01_media/music/
+  audiobooks: archive_5tb/01_media/audiobooks/
+  personal_videos: archive_5tb/01_media/personal_videos/
+manual_review_folders:
+  documents: archive_5tb/03_documents/manual_review/
+  code: archive_5tb/04_code_projects/manual_review/
+  cold_storage: archive_5tb/99_cold_storage/manual_review/
+  unknown: archive_5tb/99_cold_storage/manual_review/

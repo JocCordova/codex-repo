@@ -1,0 +1,12 @@
+# all keys and paths use lowercase snake_case. edit these examples before scanning.
+laptop_paths:
+  - ~/documents
+  - ~/downloads
+external_2tb_paths:
+  - /volumes/external_2tb
+excluded_paths:
+  - ~/.trash
+  - ~/library/caches
+  - ~/library/application support/mobile_sync/backup
+  - /volumes/external_2tb/.trashes
+max_scan_depth: null
