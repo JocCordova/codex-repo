@@ -1,0 +1,7 @@
+provider: openai
+model: gpt-4o-mini
+max_files_per_run: 100
+max_folder_summaries_per_run: 20
+max_estimated_cost: 1.0
+metadata_only_default: true
+allow_content_inspection: false

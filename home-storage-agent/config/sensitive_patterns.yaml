@@ -1,0 +1,42 @@
+extensions:
+  - env
+  - pem
+  - key
+  - crt
+  - p12
+  - pfx
+filename_keywords:
+  - password
+  - passwords
+  - 1password
+  - bitwarden
+  - lastpass
+  - ssh
+  - id_rsa
+  - id_ed25519
+  - api_key
+  - api_keys
+  - secret
+  - secrets
+  - legal
+  - tax
+  - invoice
+  - invoices
+  - contract
+  - contracts
+  - banking
+  - bank
+  - crypto
+  - wallet
+  - journal
+  - private
+folder_keywords:
+  - legal
+  - tax
+  - finance
+  - contracts
+  - banking
+  - crypto_wallet
+  - journals
+  - private_photos
+  - private_videos
